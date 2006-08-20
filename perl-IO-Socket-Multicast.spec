@@ -1,21 +1,22 @@
 #
 # Conditional build:
 %bcond_without	autodeps	# don't BR packages needed only for resolving deps
-%bcond_without	tests	# do not perform "make test"
+%bcond_without	tests		# do not perform "make test"
 #
 %include	/usr/lib/rpm/macros.perl
 %define		pdir	IO
 %define		pnam	Socket-Multicast
-Summary:	perl(IO::Socket::Multicast) - Send and receive multicast messages.
+Summary:	IO::Socket::Multicast - send and receive multicast messages
+Summary(pl):	IO::Socket::Multicast - wysy³anie i odbieranie komunikatów multicastowych
 Name:		perl-IO-Socket-Multicast
 Version:	1.04
 Release:	0.1
 # "same as perl"
-License:	GPLv1+ or Artistic
+License:	GPL v1+ or Artistic
 Group:		Development/Languages/Perl
 Source0:	http://www.cpan.org/modules/by-module/%{pdir}/%{pdir}-%{pnam}-%{version}.tar.gz
 # Source0-md5:	c433622d7ca5149faf90c21107223e1f
-URL:		http://search.cpan.org/dist/IO-Socket-Multicast
+URL:		http://search.cpan.org/dist/IO-Socket-Multicast/
 BuildRequires:	perl-devel >= 1:5.8.0
 BuildRequires:	rpm-perlprov >= 4.1-13
 %if %{with autodeps} || %{with tests}
@@ -23,13 +24,19 @@ BuildRequires:	perl-IO-Interface >= 0.94
 %endif
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
-%define		_noautoreq	'perl(anything_fake_or_conditional)'
-
 %description
-The IO::Socket::Multicast module subclasses IO::Socket::INET to enable you to
-manipulate multicast groups.  With this module (and an operating system that
-supports multicasting), you will be able to receive incoming multicast
-transmissions and generate your own outgoing multicast packets.
+The IO::Socket::Multicast module subclasses IO::Socket::INET to enable
+you to manipulate multicast groups. With this module (and an operating
+system that supports multicasting), you will be able to receive
+incoming multicast transmissions and generate your own outgoing
+multicast packets.
+
+%description -l pl
+Modu³ IO::Socket::Multicast jest podklas± IO::Socket::INET pozwalaj±c±
+na manipulowanie grupami multicastowymi. Przy u¿yciu tego modu³u (i
+systemu operacyjnego obs³uguj±cego multicasty) mo¿na odbieraæ
+przychodz±c± transmisjê multicastow± i generowaæ w³asne wychodz±ce
+pakiety multicastowe.
 
 %prep
 %setup -q -n %{pdir}-%{pnam}-%{version}
@@ -48,9 +55,8 @@ rm -rf $RPM_BUILD_ROOT
 
 %{__make} pure_install \
 	DESTDIR=$RPM_BUILD_ROOT
-%{__install} -d $RPM_BUILD_ROOT%{_examplesdir}/%{name}-%{version}
-%{__install} examples/*.pl $RPM_BUILD_ROOT%{_examplesdir}/%{name}-%{version}/
-
+install -d $RPM_BUILD_ROOT%{_examplesdir}/%{name}-%{version}
+install examples/*.pl $RPM_BUILD_ROOT%{_examplesdir}/%{name}-%{version}
 
 %clean
 rm -rf $RPM_BUILD_ROOT
@@ -62,5 +68,5 @@ rm -rf $RPM_BUILD_ROOT
 %dir %{perl_vendorarch}/auto/IO/Socket/Multicast
 %{perl_vendorarch}/auto/IO/Socket/Multicast/Multicast.bs
 %attr(755,root,root) %{perl_vendorarch}/auto/IO/Socket/Multicast/Multicast.so
-%{_examplesdir}/%{name}-%{version}/*.pl
+%{_examplesdir}/%{name}-%{version}
 %{_mandir}/man3/*
