@@ -7,7 +7,7 @@
 %define		pdir	IO
 %define		pnam	Socket-Multicast
 Summary:	IO::Socket::Multicast - send and receive multicast messages
-Summary(pl.UTF-8):   IO::Socket::Multicast - wysyłanie i odbieranie komunikatów multicastowych
+Summary(pl.UTF-8):	IO::Socket::Multicast - wysyłanie i odbieranie komunikatów multicastowych
 Name:		perl-IO-Socket-Multicast
 Version:	1.04
 Release:	0.1
