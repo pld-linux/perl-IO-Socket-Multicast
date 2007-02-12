@@ -7,7 +7,7 @@
 %define		pdir	IO
 %define		pnam	Socket-Multicast
 Summary:	IO::Socket::Multicast - send and receive multicast messages
-Summary(pl):	IO::Socket::Multicast - wysy³anie i odbieranie komunikatów multicastowych
+Summary(pl.UTF-8):   IO::Socket::Multicast - wysyÅ‚anie i odbieranie komunikatÃ³w multicastowych
 Name:		perl-IO-Socket-Multicast
 Version:	1.04
 Release:	0.1
@@ -31,11 +31,11 @@ system that supports multicasting), you will be able to receive
 incoming multicast transmissions and generate your own outgoing
 multicast packets.
 
-%description -l pl
-Modu³ IO::Socket::Multicast jest podklas± IO::Socket::INET pozwalaj±c±
-na manipulowanie grupami multicastowymi. Przy u¿yciu tego modu³u (i
-systemu operacyjnego obs³uguj±cego multicasty) mo¿na odbieraæ
-przychodz±c± transmisjê multicastow± i generowaæ w³asne wychodz±ce
+%description -l pl.UTF-8
+ModuÅ‚ IO::Socket::Multicast jest podklasÄ… IO::Socket::INET pozwalajÄ…cÄ…
+na manipulowanie grupami multicastowymi. Przy uÅ¼yciu tego moduÅ‚u (i
+systemu operacyjnego obsÅ‚ugujÄ…cego multicasty) moÅ¼na odbieraÄ‡
+przychodzÄ…cÄ… transmisjÄ™ multicastowÄ… i generowaÄ‡ wÅ‚asne wychodzÄ…ce
 pakiety multicastowe.
 
 %prep
