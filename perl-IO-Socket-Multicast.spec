@@ -10,7 +10,7 @@ Summary:	IO::Socket::Multicast - send and receive multicast messages
 Summary(pl.UTF-8):	IO::Socket::Multicast - wysyłanie i odbieranie komunikatów multicastowych
 Name:		perl-IO-Socket-Multicast
 Version:	1.05
-Release:	0.1
+Release:	1
 # "same as perl"
 License:	GPL v1+ or Artistic
 Group:		Development/Languages/Perl
@@ -65,6 +65,7 @@ rm -rf $RPM_BUILD_ROOT
 %files
 %defattr(644,root,root,755)
 %doc Changes README
+%dir %{perl_vendorarch}/auto/IO/Socket
 %{perl_vendorarch}/IO/Socket/Multicast.pm
 %dir %{perl_vendorarch}/auto/IO/Socket/Multicast
 %{perl_vendorarch}/auto/IO/Socket/Multicast/Multicast.bs
