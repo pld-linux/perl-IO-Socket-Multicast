@@ -68,7 +68,6 @@ rm -rf $RPM_BUILD_ROOT
 %dir %{perl_vendorarch}/auto/IO/Socket
 %{perl_vendorarch}/IO/Socket/Multicast.pm
 %dir %{perl_vendorarch}/auto/IO/Socket/Multicast
-%{perl_vendorarch}/auto/IO/Socket/Multicast/Multicast.bs
 %attr(755,root,root) %{perl_vendorarch}/auto/IO/Socket/Multicast/Multicast.so
 %{_examplesdir}/%{name}-%{version}
 %{_mandir}/man3/*
